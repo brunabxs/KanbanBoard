@@ -1,13 +1,15 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
-      all: ['Gruntfile.js', 'test/**/*.js', 'public/js/*.js']
+      all: ['Gruntfile.js', 'test/*.js', 'public/js/*.js']
     },
     jasmine : {
       components : {
-        src : ['public/js/controller.js'],
+        src : 'public/js/controllers.js',
         options : {
           specs : 'test/*Spec.js',
+          vendor : 'public/js/lib/*.js',
+          helpers : 'test/lib/*.js',
           keepRunner : true
         }
       }
